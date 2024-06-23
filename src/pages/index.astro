@@ -1,8 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Home from "../components/Home"
+import Home from "../components/Home";
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer";
 ---
 
-<Layout title="Deepthimai kandula">
-	<Home/>
+<Layout title="Deepthimai Kandula">
+  <Home client:load />
+  <script>
+    const workButton = document.getElementById('work-button');
+    const workSection = document.getElementById('work-section');
+    workButton.addEventListener('click', () => {
+      if (workSection) {
+        workSection.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  </script>
+  <Footer client:idle/>
 </Layout>
+
+
