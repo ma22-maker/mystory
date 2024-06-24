@@ -176,7 +176,7 @@ export default function Footer() {
         </div>
         <div className="col-start-1 col-end-7 row-start-6 row-end-9 relative">
           {/* <img src={airbnb.src} className=" row-start-6 row-end-8  col-span-7 " /> */}
-          <a className=" image-minus row-start-6 row-end-8  col-span-7 z-0 left-[0%] bottom-[-30%] absolute  w-[650px] h-[600px]"
+          <a className=" image-minus row-start-6 row-end-8  col-span-7 z-0 left-[0%] bottom-[-40%] absolute  w-[650px] h-[600px]"
           href="https://github.com/ma22-maker" target="_blank">
           <Scene imageSource={airbnb} />
           </a>
