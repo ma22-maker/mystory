@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
+import "../styles/global.css"
 import three from "../../public/three.jpeg";
 import airbnb from "../../public/airbnb.png";
 import foodapp from "../../public/foodapp.png";
