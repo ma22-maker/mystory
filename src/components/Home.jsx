@@ -46,7 +46,7 @@ export default function Home() {
   }, []);
 
   return (
-    <main ref={container} className="relative h-[200vh]">
+    <main ref={container} className="relative h-[200vh]"  id="home-section">
       <Navbar />
       <Section1 dropOne={scrollYProgress} />
       <Section2 dropTwo={scrollYProgress} />
@@ -60,7 +60,6 @@ const Section1 = ({ dropOne }) => {
   return (
     <motion.div
       style={{ scale, rotate }}
-      id="home-section"
       className="main sticky top-0 h-screen bg-[#ede8e4]  
         "
     >

@@ -7,15 +7,33 @@ import Footer from "../components/Footer";
 <Layout title="Deepthimai Kandula">
   <Home client:load />
   <script>
-    const workButton = document.getElementById('work-button');
-    const workSection = document.getElementById('work-section');
-    workButton.addEventListener('click', () => {
+    const workButton = document.getElementById("work-button");
+    const workSection = document.getElementById("work-section");
+
+    const homeButton = document.getElementById("home-button");
+    const homeSection = document.getElementById("home-section");
+
+    homeButton.addEventListener("onclick", () => {
+      if (homeSection) {
+        homeSection.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+
+    workButton.addEventListener("click", () => {
       if (workSection) {
-        workSection.scrollIntoView({ behavior: 'smooth' });
+        workSection.scrollIntoView({ behavior: "smooth" });
       }
     });
   </script>
-  <Footer client:idle/>
+  <script>
+    const homeButton = document.getElementById("home-button");
+    const homeSection = document.getElementById("home-section");
+
+    homeButton.addEventListener("click", () => {
+      if (homeSection) {
+        homeSection.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  </script>
+  <Footer client:idle />
 </Layout>
-
-
