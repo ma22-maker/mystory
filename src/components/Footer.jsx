@@ -1,16 +1,15 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
-import "../styles/global.css";
+import "../styles/global.css"
 import three from "../../public/three.jpeg";
 import airbnb from "../../public/airbnb.png";
 import foodapp from "../../public/foodapp.png";
 import vedio from "../../public/solar.mp4";
 import Scene from "./Reuse";
 import Lenis from "lenis";
-import { browserName } from "react-device-detect";
+import {browserName} from 'react-device-detect';
 
 export default function Footer() {
-  const find = {browserName}
   const container = useRef();
   const [isHovered, setIsHovered] = useState(false);
   const paths = useRef([]);
@@ -20,13 +19,13 @@ export default function Footer() {
   });
 
   const handleMouseEnter = (e) => {
-    setIsHovered(true);
+    setIsHovered(true)
     const vid = e.target;
     vid.muted = true;
     vid.play();
   };
   const handleMouseLeave = (e) => {
-    setIsHovered(false);
+    setIsHovered(false)
     const vid = e.target;
     vid.muted = false;
     vid.currentTime = 0;
@@ -80,90 +79,135 @@ export default function Footer() {
         <h1 className="text-7xl  font-eikomed absolute left-[36%] top-[12%] text-[#eaeaea]">
           PROJECTS
         </h1>
+        {browserName === 'Chrome' ? (
+             <div className="grid grid-cols-12 grid-rows-10 px-4 gap-x-10">
+             <div className="col-start-1 col-end-6 row-start-1 row-end-2">
+               <h3 className="text-[5rem] text-[#ede8e4] font-montrealthin ml-3">
+                 Selected Work
+               </h3>
+             </div>
+             <div className="col-start-1 col-end-7 row-start-2 row-end-5">
+               {/* <img src={three.src} className=" row-start-2 row-end-4" /> */}
+               <a className="  row-start-2 row-end-4  col-span-7 z-0 absolute left-[1%] bottom-[35%]   w-[650px] h-[600px]"
+               href="https://github.com/ma22-maker" target="_blank">
+               <Scene imageSource={three} />
+               </a>
+               <div className=" row-start-4 row-end-5 flex flex-row justify-between mt-2 px-10">
+                 <h1 className="  font-montrealthin text-xs">ThreeJS Portfolio</h1>
+                 <h3 className="  font-montrealthin text-xs">React | ThreeJS</h3>
+               </div>
+             </div>
+             <div className="col-start-7 col-end-13 row-start-1 row-end-4 ">
+               {/* <img src={foodapp.src} className=" row-start-1 row-end-3 " /> */}
+               <a className=" image-size row-start-1 row-end-3 col-span-7 z-0 right-[2%] top-[27%] absolute   w-[650px] h-[600px]"
+               href="https://github.com/ma22-maker" target="_blank">
+               <Scene imageSource={foodapp} />
+               </a>
+               <div className="row-start-3 row-end-4 flex flex-row justify-between mt-2 px-10">
+                 <h1 className="  font-montrealthin text-xs">Tasty Treat</h1>
+                 <h3 className="  font-montrealthin text-xs">
+                   NextJS|Typescript|Redux
+                 </h3>
+               </div>
+             </div>
+             <div className="col-start-1 col-end-7 row-start-6 row-end-9 relative">
+               {/* <img src={airbnb.src} className=" row-start-6 row-end-8  col-span-7 " /> */}
+               <a className=" image-minus row-start-6 row-end-8  col-span-7 z-0 left-[0%] bottom-[-35%] absolute  w-[650px] h-[600px]"
+               href="https://github.com/ma22-maker" target="_blank">
+               <Scene imageSource={airbnb} />
+               </a>
+               <div className="row-start-8 row-end-9 flex flex-row justify-between mt-2 px-10">
+                 <h1 className="  font-montrealthin text-xs">Airbnb Clone </h1>
+                 <h3 className=" font-montrealthin text-xs">
+                   React|Typescript|Redux
+                 </h3>
+               </div>
+             </div>
+             <div className="col-start-7 col-end-13 row-start-5 row-end-8">
+               <video
+                 width="750"
+                 height="500"
+                 controls={isHovered}
+                 autoPlay={isHovered}
+                 className=" row-start-5 row-end-7"
+                 onMouseEnter={handleMouseEnter}
+                 onMouseLeave={handleMouseLeave}
+               >
+                 <source src={vedio} type="video/mp4" />
+               </video>
+               <div className="row-start-7 row-end-8 flex flex-row justify-between mt-2">
+                 <h1 className="  font-montrealthin text-xs">
+                   VR Based Tutoring{" "}
+                 </h1>
+                 <h3 className=" font-montrealthin text-xs">Unity|C#</h3>
+               </div>
+             </div>
+           </div>
+      ) : (
         <div className="grid grid-cols-12 grid-rows-10 px-4 gap-x-10">
-          <div className="col-start-1 col-end-6 row-start-1 row-end-2">
-            <h3 className="text-[5rem] text-[#ede8e4] font-montrealthin ml-3">
-              Selected Work
-            </h3>
-          </div>
-          <div className="col-start-1 col-end-7 row-start-2 row-end-5">
-            {/* <img src={three.src} className=" row-start-2 row-end-4" /> */}
-            <a
-              className={` row-start-2 row-end-4  col-span-7 z-0 absolute ${
-                find.browserName =="Edge"
-                  ? "left-[1%] bottom-[37%] w-[570px] h-[600px]"
-                  : "left-[1%] bottom-[35%] w-[650px] h-[600px]"
-              }`}
-              href="https://github.com/ma22-maker"
-              target="_blank"
-            >
-              <Scene imageSource={three} />
-            </a>
-            <div className=" row-start-4 row-end-5 flex flex-row justify-between mt-2 px-10">
-              <h1 className="  font-montrealthin text-xs">ThreeJS Portfolio</h1>
-              <h3 className="  font-montrealthin text-xs">React | ThreeJS</h3>
-            </div>
-          </div>
-          <div className="col-start-7 col-end-13 row-start-1 row-end-4 ">
-            {/* <img src={foodapp.src} className=" row-start-1 row-end-3 " /> */}
-            <a
-              className={` row-start-1 row-end-3 col-span-7 z-0 absolute ${
-                find.browserName =="Edge"
-                  ? "right-[1%] top-[27%] w-[570px] h-[600px]"
-                  : "right-[2%] top-[27%] w-[650px] h-[600px]"
-              }`}
-              href="https://github.com/ma22-maker"
-              target="_blank"
-            >
-              <Scene imageSource={foodapp} />
-            </a>
-            <div className="row-start-3 row-end-4 flex flex-row justify-between mt-2 px-10">
-              <h1 className="  font-montrealthin text-xs">Tasty Treat</h1>
-              <h3 className="  font-montrealthin text-xs">
-                NextJS|Typescript|Redux
-              </h3>
-            </div>
-          </div>
-          <div className="col-start-1 col-end-7 row-start-6 row-end-9 relative">
-            {/* <img src={airbnb.src} className=" row-start-6 row-end-8  col-span-7 " /> */}
-            <a
-              className={` row-start-6 row-end-8  col-span-7 z-0 absolute ${
-                find.browserName =="Edge"
-                  ? "left-[0%] bottom-[-35%] w-[580px] h-[600px]"
-                  : "left-[0%] bottom-[-35%] w-[650px] h-[600px]"
-              }`}
-              href="https://github.com/ma22-maker"
-              target="_blank"
-            >
-              <Scene imageSource={airbnb} />
-            </a>
-            <div className="row-start-8 row-end-9 flex flex-row justify-between mt-2 px-10">
-              <h1 className="  font-montrealthin text-xs">Airbnb Clone </h1>
-              <h3 className=" font-montrealthin text-xs">
-                React|Typescript|Redux
-              </h3>
-            </div>
-          </div>
-          <div className="col-start-7 col-end-13 row-start-5 row-end-8">
-            <video
-              width="750"
-              height="500"
-              controls={isHovered}
-              autoPlay={isHovered}
-              className=" row-start-5 row-end-7"
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
-              <source src={vedio} type="video/mp4" />
-            </video>
-            <div className="row-start-7 row-end-8 flex flex-row justify-between mt-2">
-              <h1 className="  font-montrealthin text-xs">
-                VR Based Tutoring{" "}
-              </h1>
-              <h3 className=" font-montrealthin text-xs">Unity|C#</h3>
-            </div>
+        <div className="col-start-1 col-end-6 row-start-1 row-end-2">
+          <h3 className="text-[5rem] text-[#ede8e4] font-montrealthin ml-3">
+            Selected Work
+          </h3>
+        </div>
+        <div className="col-start-1 col-end-7 row-start-2 row-end-5">
+          {/* <img src={three.src} className=" row-start-2 row-end-4" /> */}
+          <a className="  row-start-2 row-end-4  col-span-7 z-0 absolute left-[2%] bottom-[32%]  w-[580px] h-[600px]"
+          href="https://github.com/ma22-maker" target="_blank">
+          <Scene imageSource={three} />
+          </a>
+          <div className=" row-start-4 row-end-5 flex flex-row justify-between mt-2 px-10">
+            <h1 className="  font-montrealthin text-xs">ThreeJS Portfolio</h1>
+            <h3 className="  font-montrealthin text-xs">React | ThreeJS</h3>
           </div>
         </div>
+        <div className="col-start-7 col-end-13 row-start-1 row-end-4 ">
+          {/* <img src={foodapp.src} className=" row-start-1 row-end-3 " /> */}
+          <a className="row-start-1 row-end-3 col-span-7 z-0 right-[1%] top-[27%] absolute w-[580px] h-[600px]"
+          href="https://github.com/ma22-maker" target="_blank">
+          <Scene imageSource={foodapp} />
+          </a>
+          <div className="row-start-3 row-end-4 flex flex-row justify-between mt-2 px-10">
+            <h1 className="  font-montrealthin text-xs">Tasty Treat</h1>
+            <h3 className="  font-montrealthin text-xs">
+              NextJS|Typescript|Redux
+            </h3>
+          </div>
+        </div>
+        <div className="col-start-1 col-end-7 row-start-6 row-end-9 relative">
+          {/* <img src={airbnb.src} className=" row-start-6 row-end-8  col-span-7 " /> */}
+          <a className=" image-minus row-start-6 row-end-8  col-span-7 z-0 left-[0%] bottom-[-30%] absolute  w-[650px] h-[600px]"
+          href="https://github.com/ma22-maker" target="_blank">
+          <Scene imageSource={airbnb} />
+          </a>
+          <div className="row-start-8 row-end-9 flex flex-row justify-between mt-2 px-10">
+            <h1 className="  font-montrealthin text-xs">Airbnb Clone </h1>
+            <h3 className=" font-montrealthin text-xs">
+              React|Typescript|Redux
+            </h3>
+          </div>
+        </div>
+        <div className="col-start-7 col-end-13 row-start-5 row-end-8">
+          <video
+            width="750"
+            height="500"
+            controls={isHovered}
+            autoPlay={isHovered}
+            className=" row-start-5 row-end-7"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <source src={vedio} type="video/mp4" />
+          </video>
+          <div className="row-start-7 row-end-8 flex flex-row justify-between mt-2">
+            <h1 className="  font-montrealthin text-xs">
+              VR Based Tutoring{" "}
+            </h1>
+            <h3 className=" font-montrealthin text-xs">Unity|C#</h3>
+          </div>
+        </div>
+      </div>
+      )}
       </div>
       <Logos scrollProgress={scrollYProgress} />
     </div>
