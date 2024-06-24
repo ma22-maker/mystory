@@ -31,7 +31,7 @@ void main() {
 `;
 function Model() {
   const image = useRef();
-  const texture = useTexture("/deep.jpg");
+  const texture = useTexture("/deepplain.jpg");
   const { width, height } = texture.image;
   const scale = useAspect(width, height, 0.3);
 
@@ -47,7 +47,7 @@ function Model() {
     image.current.material.uniforms.uTime.value += 0.04;
     image.current.material.uniforms.uAmplitude.value = 0.15;
     image.current.material.uniforms.uWaveLength.value = 5;
-    image.current.scale.x = 5;
+    image.current.scale.x = 4.3;
     image.current.scale.y = 5.6;
     image.current.material.uniforms.vUvScale.value.set(1, 1);
   });
