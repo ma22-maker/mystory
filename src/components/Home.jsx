@@ -14,7 +14,7 @@ import chorus from "../../public/chorus.jpg"
 const anim = {
   initial: { width: 0 },
   open: {
-    width: "10vh",
+    width: "12vh",
     borderRadius: "10px",
     transition: { duration: 0.4, ease: [0.23, 1, 0.32, 1] },
   },
