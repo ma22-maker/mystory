@@ -9,6 +9,7 @@ import music from "../../public/music.jpg";
 import pixel from "../../public/pixels.jpg";
 import enchanted from "../../public/enchanted.jpg"
 import chorus from "../../public/chorus.jpg"
+import "../styles/global.css"
 
 const anim = {
   initial: { width: 0 },

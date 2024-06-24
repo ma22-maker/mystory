@@ -2,6 +2,23 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .image-size {
+    width: 589px;
+  }
+}
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .image-bottom {
+    bottom:32%;
+  }
+}
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  .image-minus {
+    bottom:-30%;
+  }
+}
+
 @layer base {
   @font-face {
     font-family: Eikothin;
