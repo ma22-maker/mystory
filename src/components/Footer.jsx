@@ -1,14 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
-import "../styles/global.css"
+import "../styles/global.css";
 import three from "../../public/three.jpeg";
 import airbnb from "../../public/airbnb.png";
 import foodapp from "../../public/foodapp.png";
 import vedio from "../../public/solar.mp4";
 import Scene from "./Reuse";
 import Lenis from "lenis";
+import { browserName } from "react-device-detect";
 
 export default function Footer() {
+  const find = {browserName}
   const container = useRef();
   const [isHovered, setIsHovered] = useState(false);
   const paths = useRef([]);
@@ -18,13 +20,13 @@ export default function Footer() {
   });
 
   const handleMouseEnter = (e) => {
-    setIsHovered(true)
+    setIsHovered(true);
     const vid = e.target;
     vid.muted = true;
     vid.play();
   };
   const handleMouseLeave = (e) => {
-    setIsHovered(false)
+    setIsHovered(false);
     const vid = e.target;
     vid.muted = false;
     vid.currentTime = 0;
@@ -85,10 +87,17 @@ export default function Footer() {
             </h3>
           </div>
           <div className="col-start-1 col-end-7 row-start-2 row-end-5">
-            {/* <img src={three.src} className=" row-start-2 row-end-4 image-bottom" /> */}
-            <a className=" row-start-2 row-end-4  col-span-7 z-0 left-[1%] bottom-[30%] absolute min-w-[550px]  max-w-[650px] h-[600px]"
-            href="https://github.com/ma22-maker" target="_blank">
-            <Scene imageSource={three} />
+            {/* <img src={three.src} className=" row-start-2 row-end-4" /> */}
+            <a
+              className={` row-start-2 row-end-4  col-span-7 z-0 absolute ${
+                find.browserName =="Edge"
+                  ? "left-[1%] bottom-[37%] w-[570px] h-[600px]"
+                  : "left-[1%] bottom-[35%] w-[650px] h-[600px]"
+              }`}
+              href="https://github.com/ma22-maker"
+              target="_blank"
+            >
+              <Scene imageSource={three} />
             </a>
             <div className=" row-start-4 row-end-5 flex flex-row justify-between mt-2 px-10">
               <h1 className="  font-montrealthin text-xs">ThreeJS Portfolio</h1>
@@ -96,10 +105,17 @@ export default function Footer() {
             </div>
           </div>
           <div className="col-start-7 col-end-13 row-start-1 row-end-4 ">
-            {/* <img src={foodapp.src} className=" row-start-1 row-end-3 image-size" /> */}
-            <a className="  row-start-1 row-end-3 col-span-7 z-0 right-[2%] top-[27%] absolute min-w-[550px]  max-w-[650px] h-[600px]"
-            href="https://github.com/ma22-maker" target="_blank">
-            <Scene imageSource={foodapp} />
+            {/* <img src={foodapp.src} className=" row-start-1 row-end-3 " /> */}
+            <a
+              className={` row-start-1 row-end-3 col-span-7 z-0 absolute ${
+                find.browserName =="Edge"
+                  ? "right-[1%] top-[27%] w-[570px] h-[600px]"
+                  : "right-[2%] top-[27%] w-[650px] h-[600px]"
+              }`}
+              href="https://github.com/ma22-maker"
+              target="_blank"
+            >
+              <Scene imageSource={foodapp} />
             </a>
             <div className="row-start-3 row-end-4 flex flex-row justify-between mt-2 px-10">
               <h1 className="  font-montrealthin text-xs">Tasty Treat</h1>
@@ -109,10 +125,17 @@ export default function Footer() {
             </div>
           </div>
           <div className="col-start-1 col-end-7 row-start-6 row-end-9 relative">
-            {/* <img src={airbnb.src} className=" row-start-6 row-end-8  col-span-7 image-minus " /> */}
-            <a className=" row-start-6 row-end-8  col-span-7 z-0 left-[0%] bottom-[-35%] absolute  min-w-[550px]  max-w-[650px] h-[600px]"
-            href="https://github.com/ma22-maker" target="_blank">
-            <Scene imageSource={airbnb} />
+            {/* <img src={airbnb.src} className=" row-start-6 row-end-8  col-span-7 " /> */}
+            <a
+              className={` row-start-6 row-end-8  col-span-7 z-0 absolute ${
+                find.browserName =="Edge"
+                  ? "left-[0%] bottom-[-35%] w-[580px] h-[600px]"
+                  : "left-[0%] bottom-[-35%] w-[650px] h-[600px]"
+              }`}
+              href="https://github.com/ma22-maker"
+              target="_blank"
+            >
+              <Scene imageSource={airbnb} />
             </a>
             <div className="row-start-8 row-end-9 flex flex-row justify-between mt-2 px-10">
               <h1 className="  font-montrealthin text-xs">Airbnb Clone </h1>
