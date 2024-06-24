@@ -85,8 +85,8 @@ export default function Footer() {
             </h3>
           </div>
           <div className="col-start-1 col-end-7 row-start-2 row-end-5">
-            {/* <img src={three.src} className=" row-start-2 row-end-4" /> */}
-            <a className="  image-bottom row-start-2 row-end-4  col-span-7 z-0 left-[1%] bottom-[35%] absolute  w-[650px] h-[600px]"
+            {/* <img src={three.src} className=" row-start-2 row-end-4 image-bottom" /> */}
+            <a className=" row-start-2 row-end-4  col-span-7 z-0 left-[1%] bottom-[32%] absolute  w-[650px] h-[600px]"
             href="https://github.com/ma22-maker" target="_blank">
             <Scene imageSource={three} />
             </a>
@@ -96,8 +96,8 @@ export default function Footer() {
             </div>
           </div>
           <div className="col-start-7 col-end-13 row-start-1 row-end-4 ">
-            {/* <img src={foodapp.src} className=" row-start-1 row-end-3 " /> */}
-            <a className=" image-size row-start-1 row-end-3 col-span-7 z-0 right-[2%] top-[27%] absolute  w-[650px] h-[600px]"
+            {/* <img src={foodapp.src} className=" row-start-1 row-end-3 image-size" /> */}
+            <a className="  row-start-1 row-end-3 col-span-7 z-0 right-[2%] top-[27%] absolute min-w-[589px]  max-w-[650px] h-[600px]"
             href="https://github.com/ma22-maker" target="_blank">
             <Scene imageSource={foodapp} />
             </a>
@@ -109,8 +109,8 @@ export default function Footer() {
             </div>
           </div>
           <div className="col-start-1 col-end-7 row-start-6 row-end-9 relative">
-            {/* <img src={airbnb.src} className=" row-start-6 row-end-8  col-span-7 " /> */}
-            <a className=" image-minus row-start-6 row-end-8  col-span-7 z-0 left-[0%] bottom-[-35%] absolute  w-[650px] h-[600px]"
+            {/* <img src={airbnb.src} className=" row-start-6 row-end-8  col-span-7 image-minus " /> */}
+            <a className=" row-start-6 row-end-8  col-span-7 z-0 left-[0%] bottom-[-30%] absolute  w-[650px] h-[600px]"
             href="https://github.com/ma22-maker" target="_blank">
             <Scene imageSource={airbnb} />
             </a>
