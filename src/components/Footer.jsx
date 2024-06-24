@@ -74,7 +74,7 @@ export default function Footer() {
             })}
           </text>
         </svg>
-        <h1 className="text-7xl  font-eikobold absolute left-[36%] top-[12%] text-[#eaeaea]">
+        <h1 className="text-7xl  font-eikomed absolute left-[36%] top-[12%] text-[#eaeaea]">
           PROJECTS
         </h1>
         <div className="grid grid-cols-12 grid-rows-10 px-4 gap-x-10">
@@ -85,18 +85,18 @@ export default function Footer() {
           </div>
           <div className="col-start-1 col-end-7 row-start-2 row-end-5">
             {/* <img src={three.src} className=" row-start-2 row-end-4" /> */}
-            <a className="  row-start-2 row-end-4  col-span-7 z-0 left-[1%] bottom-[35%] absolute  w-[650px] h-[600px]"
+            <a className="  image-bottom row-start-2 row-end-4  col-span-7 z-0 left-[1%] bottom-[35%] absolute  w-[650px] h-[600px]"
             href="https://github.com/ma22-maker" target="_blank">
             <Scene imageSource={three} />
             </a>
-            <div className="row-start-4 row-end-5 flex flex-row justify-between mt-2 px-10">
+            <div className=" row-start-4 row-end-5 flex flex-row justify-between mt-2 px-10">
               <h1 className="  font-montrealthin text-xs">ThreeJS Portfolio</h1>
               <h3 className="  font-montrealthin text-xs">React | ThreeJS</h3>
             </div>
           </div>
           <div className="col-start-7 col-end-13 row-start-1 row-end-4 ">
             {/* <img src={foodapp.src} className=" row-start-1 row-end-3 " /> */}
-            <a className="  row-start-1 row-end-3 col-span-7 z-0 right-[2%] top-[27%] absolute  w-[650px] h-[600px]"
+            <a className=" image-size row-start-1 row-end-3 col-span-7 z-0 right-[2%] top-[27%] absolute  w-[650px] h-[600px]"
             href="https://github.com/ma22-maker" target="_blank">
             <Scene imageSource={foodapp} />
             </a>
@@ -109,7 +109,7 @@ export default function Footer() {
           </div>
           <div className="col-start-1 col-end-7 row-start-6 row-end-9 relative">
             {/* <img src={airbnb.src} className=" row-start-6 row-end-8  col-span-7 " /> */}
-            <a className=" row-start-6 row-end-8  col-span-7 z-0 left-[0%] bottom-[-35%] absolute  w-[650px] h-[600px]"
+            <a className=" image-minus row-start-6 row-end-8  col-span-7 z-0 left-[0%] bottom-[-35%] absolute  w-[650px] h-[600px]"
             href="https://github.com/ma22-maker" target="_blank">
             <Scene imageSource={airbnb} />
             </a>
